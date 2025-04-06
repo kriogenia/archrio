@@ -34,7 +34,6 @@ fsarchiver
 gpart
 gpm
 gptfdisk
-grml-zsh-config
 grub
 hdparm
 hyperv
@@ -124,4 +123,3 @@ wpa_supplicant
 wvdial
 xfsprogs
 xl2tpd
-zsh
