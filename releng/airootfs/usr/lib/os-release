@@ -1,0 +1,10 @@
+NAME=ArchrioLinux
+ID=archrio
+ID_LIKE=arch
+PRETTY_NAME="Archrio Linux"
+HOME_URL="https://www.sotoestevez.dev"
+SUPPORT_URL="https://github.com/kriogenia"
+BUG_REPORT_URL="https://github.com/kriogenia"
+ANSI_COLOR="1;26"
+BUILD_ID=2025-04-06.0
+
