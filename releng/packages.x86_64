@@ -92,6 +92,7 @@ pcsclite
 ppp
 pptpclient
 pv
+pyenv
 python-pipx
 qemu-guest-agent
 refind
