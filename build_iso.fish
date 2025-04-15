@@ -20,11 +20,17 @@ if _get_os_id = Manjaro
 end
 
 set -q WORK_FOLDER || set -l WORK_FOLDER /tmp/work
+set -q OUT_FOLDER || set -l OUT_FOLDER (pwd)/out
 
 echo "Updating pacman repos"
 pacman -Syy
 echo "Starting mkarchiso script"
-mkarchiso -v -w $WORK_FOLDER releng
+mkarchiso -v -w $WORK_FOLDER -o OUT_FOLDER releng
+
+set -l new_iso (eza -r --sort date | head -1 $OUT_FOLDER)
+set -l last_iso $OUT_FOLDER/Archrio-LATEST.iso
+echo "Updating $last_iso symlink"
+ln -sf $OUT_FOLDER/$new_iso $last_iso
 
 echo "Tearing up script artifacts"
 rm -rf $WORK_FOLDER
