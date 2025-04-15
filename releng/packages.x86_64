@@ -1,6 +1,7 @@
 alsa-utils
 amd-ucode
 arch-install-scripts
+archinstall
 archiso
 b43-fwcutter
 base
@@ -97,6 +98,7 @@ python
 python-pipx
 qemu-guest-agent
 refind
+reflector
 rp-pppoe
 rsync
 rxvt-unicode-terminfo
