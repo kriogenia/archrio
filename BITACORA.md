@@ -33,3 +33,4 @@ Journal reflecting all the work from starting this ISO to its completion.
 * **Compilation Attempt 04**: _FAILURE_. A lot of signature verifications failed. The addition of these mirrors requires a bit more work.
 * Added back `archinstall` and `reflector` packages.
 * **Compilation Attempt 05**: _SUCCESS!_. I just ran the script again and it worked? Probably first mirror fails and following work. I should had `-Syy` before, probably. Anyway, we have _Archrio-2025.04.15.iso_. Yay!
+* While attempting to make a `clean` recipe I removed some non-staged files. I'm such an idiot. Thankfully nothing important was lost.
