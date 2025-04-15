@@ -21,6 +21,8 @@ end
 
 set -q WORK_FOLDER || set -l WORK_FOLDER /tmp/work
 
+echo "Updating pacman repos"
+pacman -Syy
 echo "Starting mkarchiso script"
 mkarchiso -v -w $WORK_FOLDER releng
 
