@@ -17,7 +17,6 @@ cloud-init
 cryptsetup
 darkhttpd
 ddrescue
-dhcpcd
 diffutils
 dmidecode
 dmraid
@@ -44,7 +43,6 @@ hyperv
 intel-ucode
 irssi
 iw
-iwd
 jfsutils
 jq
 just
@@ -73,10 +71,10 @@ memtest86+-efi
 mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
-modemmanager
 mtools
 nbd
 ndisc6
+networkmanager
 nfs-utils
 nilfs-utils
 nmap
