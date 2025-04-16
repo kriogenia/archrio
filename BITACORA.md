@@ -41,4 +41,6 @@ Journal reflecting all the work from starting this ISO to its completion.
 
 * I overcomplicated the mirrorlist thing. Looks like the `releng/pacman.conf` manages the configuration used while pulling the packages. So, the correct way to address that is to have a defined mirrorlist and specify in the configuration to use that one instead of the system.
 * Changed to `NetworkManager` instead of using `iwd` and `dhcpcd`. Also took the opportunity to remove `ModemManager`. Enabled the systemd so now Ethernet machines (including the VM), at least, will have out-of-the-box internet connection.
-* Specified `es` keyboard layout and added `gl_ES`, `es_ES` and `en_US` locales.
+* Specified `es` keyboard layout and added `gl_ES`, `es_ES` and `en_US` locales (and a Pacman hook to generate them automatically when starting the live ISO).
+* Made quite a lot of compilations so, until I break that again I won't be listing the compilation attempts again because it figured it out.
+* **Launch Attempt 03** (_Archrio-2025.04.16.iso_): INSTALLS! The problem was fixed with `pacman-key --init` and `pacman-key --populate archlinux`. So, the Archrio ISO can now install a barebones ArchLinux... Time to move into the Calamares stuff to get this distro to work installed and not just as a LiveUSB/CD.
