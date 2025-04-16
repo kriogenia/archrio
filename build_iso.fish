@@ -1,26 +1,19 @@
 #!/usr/bin/fish
 
-function _get_os_id
-    cat /etc/os-release | rg "^ID=" | sed --quiet 's/ID=//'
-end
-
-if _get_os_id = Manjaro
-    echo "Detected Manjaro OS, adding arch mirrors to pull all packages"
+set -q MIRROR_LIST; or set -f MIRROR_LIST releng/archrio.mirrorlist
+if contains -- --update-mirrors $argv
+    echo "Updating mirrors..."
     set -q MIRRORS_COUNTRY || set -l MIRRORS_COUNTRY ES
-    set -f mirror_file /etc/pacman.d/mirrorlist
-    test -e $mirror_file; or return
-    set -f mirror_backup /tmp/mirrorlist.bak
-    echo "Creating mirrorlist backup in $mirror_backup"
-    cp $mirror_file $mirror_backup
     curl -s https://archlinux.org/mirrorlist/?country=$MIRRORS_COUNTRY&protocol=https&ip_version=4 \
-        | tail -3 | sed 's/^.//' | cat - $mirror_file | sponge $mirror_file
-    echo "Mirrorlist to use in the script:"
-    echo -e
-    cat $mirror_file
+        | sed 's/^.//' >$MIRROR_LIST
 end
 
-set -q WORK_FOLDER || set -l WORK_FOLDER /tmp/work
-set -q OUT_FOLDER || set -l OUT_FOLDER (pwd)/out
+set -f pacman_mirror_path /tmp/archrio.mirrorlist
+cp $MIRROR_LIST $pacman_mirror_path
+echo "Mirrorlist to use in the script:"
+echo -e
+cat $pacman_mirror_path
+
 
 echo "Updating pacman repos"
 pacman -Syy
@@ -34,7 +27,3 @@ ln -sf $OUT_FOLDER/$new_iso $last_iso
 
 echo "Tearing up script artifacts"
 rm -rf $WORK_FOLDER
-echo "Restoring original mirrorlist"
-cp $mirror_backup $mirror_file
-
-functions -e _get_os_id

@@ -34,4 +34,9 @@ Journal reflecting all the work from starting this ISO to its completion.
 * Added back `archinstall` and `reflector` packages.
 * **Compilation Attempt 05**: _SUCCESS!_. I just ran the script again and it worked? Probably first mirror fails and following work. I should had `-Syy` before, probably. Anyway, we have _Archrio-2025.04.15.iso_. Yay!
 * While attempting to make a `clean` recipe I removed some non-staged files. I'm such an idiot. Thankfully nothing important was lost.
-* **Launch Attempt 01** (_Archrio-2025.04.15.iso_): _WORKS!_ I'm able to enter the installation and all my packages are there.
+* **Launch Attempt 02** (_Archrio-2025.04.15.iso_): _WORKS!_ I'm able to enter the installation and all my packages are there.
+  * Advanced in the installation attempt until a keyring error striked while pacstrapping.
+
+## Day 04
+
+* I overcomplicated the mirrorlist thing. Looks like the `releng/pacman.conf` manages the configuration used while pulling the packages. So, the correct way to address that is to have a defined mirrorlist and specify in the configuration to use that one instead of the system.
