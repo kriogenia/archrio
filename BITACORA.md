@@ -41,4 +41,4 @@ Journal reflecting all the work from starting this ISO to its completion.
 
 * I overcomplicated the mirrorlist thing. Looks like the `releng/pacman.conf` manages the configuration used while pulling the packages. So, the correct way to address that is to have a defined mirrorlist and specify in the configuration to use that one instead of the system.
 * Changed to `NetworkManager` instead of using `iwd` and `dhcpcd`. Also took the opportunity to remove `ModemManager`. Enabled the systemd so now Ethernet machines (including the VM), at least, will have out-of-the-box internet connection.
-* Specified `es` keyboard layout.
+* Specified `es` keyboard layout and added `gl_ES`, `es_ES` and `en_US` locales.
