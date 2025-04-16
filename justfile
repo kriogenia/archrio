@@ -3,6 +3,9 @@ set shell := ["fish", "-c"]
 export MIRRORS_COUNTRY := "ES"
 export OUT_FOLDER := "out"
 
+build:
+  @sudo ./build_iso.fish
+
 clean:
   @sudo rm (eza --absolute --no-symlinks --sort date -r $OUT_FOLDER | tail +2)
 
