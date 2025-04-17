@@ -31,7 +31,6 @@ cat $etc/os-release | rg "^BUILD_ID" | sed 's/BUILD_ID=//' | read -d "." -l buil
 test $today = $build_date; and set -l build_v (math $build_v + 1); or set -l build_v 0
 sed -i "s/^BUILD_ID=.\+\$/BUILD_ID=$today.$build_v/" $etc/os-release
 cat $etc/os-release
-return
 
 set -q WORK_FOLDER || set -f WORK_FOLDER /tmp/work
 set -q OUT_FOLDER || set -f OUT_FOLDER (pwd)/out
