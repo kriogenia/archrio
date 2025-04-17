@@ -1,9 +1,9 @@
 #!/usr/bin/fish
 
 set -f iso_folder releng
+set -f etc $iso_folder/airootfs/etc
 
 if contains -- --generate-user $argv
-    set -f etc $iso_folder/airootfs/etc
     read -l -P "Username: " -l username
     set -l pass (openssl passwd -6)
     echo "$username:$pass:14871::::::" >>$etc/shadow
@@ -24,6 +24,14 @@ cp $MIRROR_LIST $pacman_mirror_path
 echo "Mirrorlist to use in the script:"
 echo -e
 cat $pacman_mirror_path
+
+echo "Generating new BUILD_ID"
+set -l today (date +"%Y-%m-%d")
+cat $etc/os-release | rg "^BUILD_ID" | sed 's/BUILD_ID=//' | read -d "." -l build_date build_v
+test $today = $build_date; and set -l build_v (math $build_v + 1); or set -l build_v 0
+sed -i "s/^BUILD_ID=.\+\$/BUILD_ID=$today.$build_v/" $etc/os-release
+cat $etc/os-release
+return
 
 set -q WORK_FOLDER || set -f WORK_FOLDER /tmp/work
 set -q OUT_FOLDER || set -f OUT_FOLDER (pwd)/out
