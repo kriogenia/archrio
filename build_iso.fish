@@ -5,8 +5,10 @@ set -f iso_folder releng
 if contains -- --generate-user $argv
     set -f etc $iso_folder/airootfs/etc
     read -l -P "Username: " -l username
+    set -l pass (openssl passwd -6)
+    echo "$username:$pass:14871::::::" >>$etc/shadow
     echo "$username:x:1000:1000::/home/$username:/usr/bin/fish" >>$etc/passwd
-    echo "$username:$(openssl passwd -6):14871::::::" >>$etc/shadow
+    echo "$username:!*::" >>$etc/gshadow
 end
 
 set -q MIRROR_LIST; or set -f MIRROR_LIST $iso_folder/archrio.mirrorlist
@@ -42,5 +44,6 @@ rm -rf $WORK_FOLDER
 if contains -- --generate-user $argv
     echo "Restoring user files"
     cat $etc/passwd | head -n -1 | sponge $etc/passwd
+    cat $etc/gshadow | head -n -1 | sponge $etc/gshadow
     cat $etc/shadow | head -n -1 | sponge $etc/shadow
 end
