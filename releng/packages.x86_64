@@ -100,6 +100,7 @@ python-pipx
 qemu-guest-agent
 refind
 reflector
+ripgrep
 rp-pppoe
 rsync
 rxvt-unicode-terminfo
