@@ -6,10 +6,11 @@ set -f etc $iso_folder/airootfs/etc
 
 echo "Rendering templates..."
 # TODO read values from argument
-jinja2 --format yml -o $etc/hostname $etc/hostname.j2 values/lenovo-laptop.yml
-rm $etc/hostname.j2
-
-return
+set -f render_values values/lenovo-laptop.yml
+for file in $etc/hostname $etc/archinstall.json
+    jinja2 --format yml -o $file $file.j2 $render_values
+    rm $file.j2
+end
 
 if contains -- --generate-user $argv
     read -l -P "Username: " -l username
