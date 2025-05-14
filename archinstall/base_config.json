@@ -2,7 +2,7 @@
   "additional-repositories": [],
   "archinstall-language": "English",
   "audio_config": "pipewire",
-  "bootloader": "Systemd-boot",
+  "bootloader": "grub",
   "debug": false,
   "disk_config": {
     "config_type": "manual_partitioning",
