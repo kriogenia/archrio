@@ -1,6 +1,7 @@
 #!/usr/bin/fish
 
-set -f iso_folder releng
+cp -r releng archrio-releng
+set -f iso_folder archrio-releng
 set -f etc $iso_folder/airootfs/etc
 
 if contains -- --generate-user $argv
@@ -54,3 +55,5 @@ if contains -- --generate-user $argv
     cat $etc/gshadow | head -n -1 | sponge $etc/gshadow
     cat $etc/shadow | head -n -1 | sponge $etc/shadow
 end
+
+rm -rf $iso_folder
