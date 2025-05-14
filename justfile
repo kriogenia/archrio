@@ -14,4 +14,4 @@ test:
 
 update_mirrors:
   @curl -s https://archlinux.org/mirrorlist/?country=$MIRRORS_COUNTRY&protocol=https&ip_version=4 \
-        | sed 's/^.//' >releng/mirrorlist
+        | sed 's/^.//' >releng/archrio.mirrorlist
