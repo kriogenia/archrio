@@ -56,12 +56,4 @@ ln -sf $new_iso $last_iso
 
 echo "Tearing up script artifacts"
 rm -rf $WORK_FOLDER
-
-if contains -- --generate-user $argv
-    echo "Restoring user files"
-    cat $etc/passwd | head -n -1 | sponge $etc/passwd
-    cat $etc/gshadow | head -n -1 | sponge $etc/gshadow
-    cat $etc/shadow | head -n -1 | sponge $etc/shadow
-end
-
 rm -rf $iso_folder
