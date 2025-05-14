@@ -4,6 +4,13 @@ cp -r releng archrio-releng
 set -f iso_folder archrio-releng
 set -f etc $iso_folder/airootfs/etc
 
+echo "Rendering templates..."
+# TODO read values from argument
+jinja2 --format yml -o $etc/hostname $etc/hostname.j2 values/lenovo-laptop.yml
+rm $etc/hostname.j2
+
+return
+
 if contains -- --generate-user $argv
     read -l -P "Username: " -l username
     set -l pass (openssl passwd -6)
