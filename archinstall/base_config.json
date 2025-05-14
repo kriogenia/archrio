@@ -1,7 +1,7 @@
 {
   "additional-repositories": [],
   "archinstall-language": "English",
-  "audio_config": null,
+  "audio_config": "pipewire",
   "bootloader": "Systemd-boot",
   "debug": false,
   "disk_config": {
