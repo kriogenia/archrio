@@ -13,14 +13,6 @@ for file in $etc/hostname $etc/shadow $etc/passwd $etc/gshadow $etc/archinstall_
 end
 return
 
-set -q MIRROR_LIST; or set -f MIRROR_LIST $iso_folder/archrio.mirrorlist
-if contains -- --update-mirrors $argv
-    echo "Updating mirrors..."
-    set -q MIRRORS_COUNTRY || set -l MIRRORS_COUNTRY ES
-    curl -s https://archlinux.org/mirrorlist/?country=$MIRRORS_COUNTRY&protocol=https&ip_version=4 \
-        | sed 's/^.//' >$MIRROR_LIST
-end
-
 set -f pacman_mirror_path /tmp/archrio.mirrorlist
 cp $MIRROR_LIST $pacman_mirror_path
 echo "Mirrorlist to use in the script:"
