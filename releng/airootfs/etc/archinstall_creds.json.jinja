@@ -8,7 +8,7 @@
     {
       "username": "{{ u.username }}",
       "enc_password": "{{ u.password }}",
-      "sudo": {{ u.sudo | default("false") }}
+      "sudo": {{ u.sudo | default("false") | lower }}
     }{{ "," if not loop.last }}
     {% endfor %}
   ]
