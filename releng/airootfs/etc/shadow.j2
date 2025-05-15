@@ -1,4 +1,4 @@
-root:{{ root_password }}:14871::::::
+root:{{ ( root or {} ).password }}:14871::::::
 {% for u in users -%}
 {{ u.username }}:{{ u.password }}:14871::::::
 {% endfor %}
