@@ -14,8 +14,11 @@ You can pre-generate some values for the LiveUSB and archinstall like the hostna
 ```yml
 hostname: myhostname
 users:
-- user: myuser
+- user: mysudouser
   password: my-encrypted-password
+  sudo: true
+- user: otheruser
+  password: their-encrypted-password
 ```
 
 ## Compiling the ISO

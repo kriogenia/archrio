@@ -1,0 +1,13 @@
+{
+  {% if users -%}
+  "users": [
+    {% for u in users -%}
+    {
+      "username": "{{ u.username }}",
+      "enc_password": "{{ u.password }}",
+      "sudo": {{ u.sudo | default("false") }}
+    }{{ "," if not loop.last }}
+    {% endfor %}
+  ]
+  {%- endif %}
+}

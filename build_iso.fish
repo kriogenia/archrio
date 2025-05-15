@@ -7,7 +7,7 @@ set -f etc $iso_folder/airootfs/etc
 echo "Rendering templates..."
 set -f render_values $argv[1]
 echo $render_values
-for file in $etc/hostname $etc/shadow $etc/archinstall.json
+for file in $etc/hostname $etc/shadow $etc/archinstall_config.json $etc/archinstall_creds.json
     jinja2 --format yml -o $file $file.j2 $render_values
     rm $file.j2
 end
