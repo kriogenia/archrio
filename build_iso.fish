@@ -5,9 +5,9 @@ set -f iso_folder archrio-releng
 set -f etc $iso_folder/airootfs/etc
 
 echo "Rendering templates..."
-# TODO read values from argument
-set -f render_values values/lenovo-laptop.yml
-for file in $etc/hostname $etc/archinstall.json
+set -f render_values $argv[1]
+echo $render_values
+for file in $etc/hostname $etc/shadow $etc/archinstall.json
     jinja2 --format yml -o $file $file.j2 $render_values
     rm $file.j2
 end

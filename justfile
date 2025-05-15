@@ -6,8 +6,10 @@ export OUT_FOLDER := "out"
 build ARGS="":
   @sudo ./build_iso.fish {{ARGS}}
 
+# todo fix old iso removal
 clean:
-  @sudo rm (eza --absolute --no-symlinks --sort date -r $OUT_FOLDER | tail +2)
+  @sudo rm (eza --absolute --no-symlinks --sort date -r $OUT_FOLDER | tail +2);
+  @sudo rm -rf (pwd)/archrio-releng
 
 test:
   @run_archiso -u -i $OUT_FOLDER/Archrio-LATEST.iso
