@@ -7,8 +7,9 @@ set -f etc $iso_folder/airootfs/etc
 echo "Rendering templates..."
 set -f render_values $argv[1]
 for file in $iso_folder/packages.x86_64 $etc/hostname $etc/shadow $etc/passwd $etc/gshadow $etc/archinstall_config.json $etc/archinstall_creds.json
-    cat base.yml $render_values | jinja2 --format yml -o $file $file.j2
-    rm $file.j2
+    cat base.yml $render_values | jinja2 --format yml -o $file $file.jinja
+    # TODO check why files are not being deleted
+    rm $file.jinja
 end
 
 set -f pacman_mirror_path /tmp/archrio.mirrorlist
