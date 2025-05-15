@@ -7,18 +7,11 @@ set -f etc $iso_folder/airootfs/etc
 echo "Rendering templates..."
 set -f render_values $argv[1]
 echo $render_values
-for file in $etc/hostname $etc/shadow $etc/archinstall_config.json $etc/archinstall_creds.json
+for file in $etc/hostname $etc/shadow $etc/passwd $etc/gshadow $etc/archinstall_config.json $etc/archinstall_creds.json
     jinja2 --format yml -o $file $file.j2 $render_values
     rm $file.j2
 end
-
-if contains -- --generate-user $argv
-    read -l -P "Username: " -l username
-    set -l pass (openssl passwd -6)
-    echo "$username:$pass:14871::::::" >>$etc/shadow
-    echo "$username:x:1000:1000::/home/$username:/usr/bin/fish" >>$etc/passwd
-    echo "$username:!*::" >>$etc/gshadow
-end
+return
 
 set -q MIRROR_LIST; or set -f MIRROR_LIST $iso_folder/archrio.mirrorlist
 if contains -- --update-mirrors $argv
