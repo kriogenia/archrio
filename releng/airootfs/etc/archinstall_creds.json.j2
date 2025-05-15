@@ -1,4 +1,7 @@
 {
+  {%- if root_password %}
+  "root_enc_password": "{{ root_password }}"
+  {%- endif -%}{{ "," if users and root_password }}
   {% if users -%}
   "users": [
     {% for u in users -%}
@@ -9,5 +12,5 @@
     }{{ "," if not loop.last }}
     {% endfor %}
   ]
-  {%- endif %}
+  {% endif %}
 }
