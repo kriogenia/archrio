@@ -1,4 +1,21 @@
 packages:
 - amd-ucode
 - archiso
+- bat
+- eza
 - fish
+- fisher
+- fzf
+- jq
+- just
+- kitty
+- lazygit
+- networkmanager
+- pyenv
+- python
+- ripgrep
+- ttf-fira-code
+- unzip
+- xsel
+- yq
+- zip
