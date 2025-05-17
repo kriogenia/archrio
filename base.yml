@@ -6,6 +6,7 @@ packages:
 - fish
 - fisher
 - fzf
+- git
 - jq
 - just
 - kitty
