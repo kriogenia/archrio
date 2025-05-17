@@ -15,6 +15,7 @@ packages:
 - pyenv
 - python
 - ripgrep
+- tmux
 - ttf-fira-code
 - unzip
 - xsel
