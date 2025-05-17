@@ -12,11 +12,13 @@ for file in $iso_folder/packages.x86_64 $etc/hostname $etc/shadow $etc/passwd $e
     rm $file.jinja
 end
 
-set -f pacman_mirror_path /tmp/archrio.mirrorlist
-cp $MIRROR_LIST $pacman_mirror_path
-echo "Mirrorlist to use in the script:"
-echo -e
-cat $pacman_mirror_path
+if set -q MIRROR_LIST
+    set -f pacman_mirror_path /tmp/archrio.mirrorlist
+    cp $MIRROR_LIST $pacman_mirror_path
+    echo "Mirrorlist to use in the script:"
+    echo -e
+    cat $pacman_mirror_path
+end
 
 echo "Generating new BUILD_ID"
 set -l today (date +"%Y-%m-%d")
