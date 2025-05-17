@@ -26,11 +26,25 @@
     {%- endfor %}
   ],
   "parallel downloads": 0,
-  "profile_config": null,
+  "profile_config": {
+    "gfx_driver": "{{ gpu_driver }}",
+    "greeter": "sddm",
+    "profile": {
+      "custom_settings": {
+        "Hyprland": {
+            "seat_access": "polkit"
+        }
+      },
+      "details": [
+        "Hyprland"
+      ],
+      "main": "Desktop"
+    }
+  },
   "save_config": null,
   "script": "guided",
   "silent": false,
   "swap": true,
   "timezone": "Europe/Madrid",
-  "version": "2.6.0"
+  "version": null
 }
