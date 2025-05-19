@@ -3,6 +3,7 @@ packages:
 - archiso
 - bat
 - eza
+- firefox
 - fish
 - fisher
 - fzf
