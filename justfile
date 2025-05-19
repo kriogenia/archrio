@@ -6,6 +6,11 @@ export OUT_FOLDER := "out"
 build ARGS="":
   @sudo ./build_iso.fish {{ARGS}}
 
+burn ARGS:
+  @umount {{ARGS}}1
+  @sudo wipefs --all {{ARGS}}
+  @sudo cp out/Archrio-LATEST.iso {{ARGS}}
+
 # todo fix old iso removal
 clean:
   @sudo rm (eza --absolute --no-symlinks --sort date -r $OUT_FOLDER | tail +2);
