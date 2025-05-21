@@ -6,6 +6,11 @@
     "audio": "pipewire"
   },
   "bootloader": "grub",
+  "custom_commands": [
+    {%- for c in custom_commands %}
+    "{{ c }}"{{ "," if not loop.last }}
+    {%- endfor %}
+  ],
   "debug": false,
   {#- disk_config -#}
   {#- disk_encryption #}

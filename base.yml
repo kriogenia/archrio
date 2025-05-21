@@ -1,3 +1,8 @@
+custom_commands:
+  - "cd /home/sotoestevez; git clone https://github.com/kriogenia/dotfiles.git"
+  - "chown -R sotoestevez:sotoestevez /home/sotoestevez/dotfiles"
+  - "chmod +x /home/sotoestevez/dotfiles/install.sh"
+  - "cd /home/sotoestevez/dotfiles; ./install.sh"
 packages:
   iso:
   - amd-ucode
