@@ -13,8 +13,10 @@ burn ARGS:
 
 # todo fix old iso removal
 clean:
-  @sudo rm (eza --absolute --no-symlinks --sort date -r $OUT_FOLDER | tail +2);
-  @sudo rm -rf (pwd)/archrio-releng
+  #!/usr/bin/env fish
+  set -l isos (eza --absolute --no-symlinks --sort date -r $OUT_FOLDER)
+  test (count $isos) -gt 1 && rm $isos[2..] 
+  sudo rm -rf (pwd)/archrio-releng
 
 test:
   @run_archiso -u -i $OUT_FOLDER/Archrio-LATEST.iso
