@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 cp -r releng archrio-releng
 set -f iso_folder archrio-releng
@@ -8,7 +8,6 @@ echo "Rendering templates..."
 set -f render_values $argv[1]
 for file in $iso_folder/packages.x86_64 $etc/hostname $etc/shadow $etc/passwd $etc/gshadow $etc/archinstall_config.json $etc/archinstall_creds.json
     cat base.yml $render_values | jinja2 --format yml -o $file $file.jinja
-    # TODO check why files are not being deleted
     rm $file.jinja
 end
 
@@ -25,6 +24,10 @@ cat $etc/os-release | rg "^BUILD_ID" | sed 's/BUILD_ID=//' | read -d "." -l buil
 test $today = $build_date; and set -l build_v (math $build_v + 1); or set -l build_v 0
 sed -i "s/^BUILD_ID=.\+\$/BUILD_ID=$today.$build_v/" $etc/os-release
 cat $etc/os-release
+
+echo "Copying network configuration"
+sudo cp -r /etc/NetworkManager/system-connections "$etc/NetworkManager/"
+sudo chown $USER:$USER "$etc/NetworkManager/system-connections/*"
 
 set -q WORK_FOLDER || set -f WORK_FOLDER /tmp/work
 set -q OUT_FOLDER || set -f OUT_FOLDER (pwd)/out
