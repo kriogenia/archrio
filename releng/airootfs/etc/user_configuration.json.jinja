@@ -23,7 +23,7 @@
   "ntp": true,
   "offline": false,
   "packages": [
-    {%- for p in packages %}
+    {%- for p in (packages.iso + packages.install) %}
     "{{ p }}"{{ "," if not loop.last }}
     {%- endfor %}
   ],

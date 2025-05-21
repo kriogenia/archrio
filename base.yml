@@ -1,27 +1,28 @@
 packages:
-- amd-ucode
-- archiso
-- bat
-- eza
-- firefox
-- fish
-- fisher
-- fzf
-- git
-- jq
-- just
-- kitty
-- lazygit
-- less
-- markdownlint-cli2
-- networkmanager
-- pyenv
-- python
-- ripgrep
-- tmux
-- ttf-fira-code
-- unzip
-- xsel
-- yq
-- zip
-# separate liveusb and installation packages
+  iso:
+  - amd-ucode
+  - bat
+  - fish
+  - git
+  - less
+  - networkmanager
+  - python
+  - ripgrep
+  - xsel
+  install:
+  - archiso
+  - eza
+  - firefox
+  - fisher
+  - fzf
+  - jq
+  - just
+  - kitty
+  - lazygit
+  - markdownlint-cli2
+  - pyenv
+  - tmux
+  - ttf-fira-code
+  - unzip
+  - yq
+  - zip
