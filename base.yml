@@ -26,6 +26,7 @@ packages:
   - lazygit
   - markdownlint-cli2
   - pyenv
+  - rustup
   - tmux
   - ttf-fira-code
   - unzip
