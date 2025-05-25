@@ -6,6 +6,7 @@ packages:
   - git
   - less
   - networkmanager
+  - openssh
   - python
   - ripgrep
   - xsel
