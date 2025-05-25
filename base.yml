@@ -4,6 +4,7 @@ packages:
   - bat
   - fish
   - git
+  - htop
   - less
   - networkmanager
   - openssh
