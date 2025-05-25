@@ -7,11 +7,10 @@ build ARGS="":
   @sudo ./build_iso.fish {{ARGS}}
 
 burn ARGS:
-  @umount {{ARGS}}1
-  @sudo wipefs --all {{ARGS}}
-  @sudo cp out/Archrio-LATEST.iso {{ARGS}}
+  umount {{ARGS}}1
+  sudo wipefs --all {{ARGS}}
+  sudo cp out/Archrio-LATEST.iso {{ARGS}}
 
-# todo fix old iso removal
 clean:
   #!/usr/bin/env fish
   set -l isos (eza --absolute --no-symlinks --sort date -r $OUT_FOLDER)
