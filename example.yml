@@ -1,0 +1,14 @@
+custom_commands:
+  - "echo 'Welcome to Archrio' > /home/archrio/hello"
+gpu_driver: AMD / ATI (open-source)
+hostname: archrio
+root:
+  password: $6$f0q9l955bVlDuDOG$vieMv0Uz.Db4PFKXTNmfjP7Pz6pCQz50yLdqkwKKmdj0mjJaKA6kaIO.PzJV9Yj6c2blY9grp2mvBJTUpS2Pl0 # root
+  shell: bash
+users:
+- username: archrio
+  password: $6$Jls/8ZESxk7wFT9U$n89q.DavoqSgyEoHGAb5FX09foi6gLw0.wjHuvOMYZWGTDgnwrK8wTUif0luf06RDAtjiyChtrGvSz8f4Uysj. # archrio
+  sudo: true
+  shell: fish
+- username: guest
+  shell: fish
