@@ -10,6 +10,7 @@ packages:
   - openssh
   - python
   - ripgrep
+  - wget
   - xsel
   install:
   - archiso
