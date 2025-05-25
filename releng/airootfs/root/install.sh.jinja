@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 {% set commands = custom_commands or {} %}
 {%- for c in commands.preinstall or {} %}
 {{ c }}

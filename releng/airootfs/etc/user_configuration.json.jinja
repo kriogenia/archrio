@@ -12,7 +12,9 @@
     {%- endfor %}
   ],
   "debug": false,
-  {#- disk_config -#}
+  {% if disk_config %}
+  "disk_config": {{ disk_config | tojson }},
+  {% endif %}
   {#- disk_encryption #}
   "hostname": "{{ hostname }}",
   "kernels": [
@@ -23,7 +25,9 @@
     "sys_enc": "UTF-8",
     "sys_lang": "en_US"
   },
-  "network_config": {},
+  "network_config": {
+      "type": "nm"
+  },
   "no_pkg_lookups": false,
   "ntp": true,
   "offline": false,
