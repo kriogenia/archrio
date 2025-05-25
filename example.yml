@@ -1,5 +1,14 @@
 custom_commands:
-  - "echo 'Welcome to Archrio' > /home/archrio/hello"
+  preinstall:
+  #- "nmcli device wifi connect MyWifi --ask"
+  archinstall:
+  - "git clone https://github.com/kriogenia/dotfiles.git /home/archrio/dotfiles"
+  - "chown -R archrio:archrio /home/archrio/dotfiles"
+  - "chmod +x /home/archrio/dotfiles/install.sh"
+  - "USER_HOME=/home/archrio ./install.sh"
+  postinstall:
+  - "cp /tmp/user_*.json /mnt/home/archrio" 
+  # - "reboot"
 gpu_driver: AMD / ATI (open-source)
 hostname: archrio
 root:

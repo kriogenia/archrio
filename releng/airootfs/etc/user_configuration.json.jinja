@@ -7,7 +7,7 @@
   },
   "bootloader": "grub",
   "custom_commands": [
-    {%- for c in custom_commands %}
+    {%- for c in (custom_commands or {}).archinstall or {} %}
     "{{ c }}"{{ "," if not loop.last }}
     {%- endfor %}
   ],

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+{% set commands = custom_commands or {} %}
+{%- for c in commands.preinstall or {} %}
+{{ c }}
+{%- endfor %}
+archinstall --config /etc/user_configuration.json --creds /etc/user_credentials.json
+{%- for c in commands.postinstall or {} %}
+{{ c }}
+{%- endfor %}
