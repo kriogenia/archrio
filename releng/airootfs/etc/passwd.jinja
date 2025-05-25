@@ -1,5 +1,5 @@
 root:x:0:0:root:/root:/usr/bin/{{ ( root or {}).shell | default("bash") }}
-{% for u in users -%}
+{% for u in users or {} -%}
 {%- set user_id = 999 + loop.index -%}
 {%- set home = u.home | default("/home/%s" | format(u.username)) -%}
 {{ u.username }}:x:{{ user_id }}:{{ user_id }}::{{ home }}:/usr/bin/{{ u.shell | default("bash") }}
