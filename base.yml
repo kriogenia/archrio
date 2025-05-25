@@ -21,11 +21,13 @@ packages:
   - kitty
   - lazygit
   - markdownlint-cli2
+  - nvim
   - pyenv
   - rust-analyzer
   - rustup
   - tmux
   - ttf-fira-code
   - unzip
+  - vim
   - yq
   - zip
