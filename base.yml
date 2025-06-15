@@ -10,6 +10,7 @@ packages:
     - networkmanager
     - openssh
     - python
+    - qutebrowser
     - ripgrep
     - wget
     - xsel
@@ -41,5 +42,6 @@ packages:
     - ttf-fira-code
     - unzip
     - vim
+    - vlc
     - yq
     - zip
