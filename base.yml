@@ -1,6 +1,7 @@
 packages:
   iso:
     - amd-ucode
+    - ansible
     - bat
     - fish
     - git
