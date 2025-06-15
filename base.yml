@@ -16,10 +16,11 @@ packages:
     - xsel
   install:
     - archiso
-    - autofirma
+    # - autofirma
     - bacon
     - bitwarden
-    - ca-certificates-dnie
+    # - ca-certificates-dnie
+    # - ca-certificates-fnmt
     - eza
     - firefox
     - fisher
@@ -27,7 +28,7 @@ packages:
     - gamemode
     - jdk-openjdk
     - jdk21-openjdk
-    - jinja2-cli
+    # - jinja2-cli
     - jq
     - just
     - kitty
@@ -44,4 +45,5 @@ packages:
     - vim
     - vlc
     - yq
+    # - zen-browser-bin
     - zip
