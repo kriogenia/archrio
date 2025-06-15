@@ -18,6 +18,7 @@ packages:
     - autofirma
     - bacon
     - bitwarden
+    - ca-certificates-dnie
     - eza
     - firefox
     - fisher
