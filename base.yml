@@ -23,6 +23,7 @@ packages:
     - firefox
     - fisher
     - fzf
+    - gamemode
     - jdk-openjdk
     - jdk21-openjdk
     - jq
