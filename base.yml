@@ -18,12 +18,14 @@ packages:
     - firefox
     - fisher
     - fzf
+    - jdk-openjdk
+    - jdk21-openjdk
     - jq
     - just
     - kitty
     - lazygit
-    - markdownlint-cli2
     - nvim
+    - qbittorrent
     - pdftk
     - pyenv
     - rust-analyzer
