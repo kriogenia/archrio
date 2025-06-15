@@ -33,7 +33,6 @@ packages:
     - lazygit
     - nvim
     - qbittorrent
-    - pdftk
     - pyenv
     - rust-analyzer
     - rustup
