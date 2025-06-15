@@ -26,6 +26,7 @@ packages:
     - gamemode
     - jdk-openjdk
     - jdk21-openjdk
+    - jinja2-cli
     - jq
     - just
     - kitty
