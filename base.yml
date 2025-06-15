@@ -15,6 +15,7 @@ packages:
     - xsel
   install:
     - archiso
+    - autofirma
     - eza
     - firefox
     - fisher
