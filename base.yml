@@ -17,6 +17,7 @@ packages:
     - archiso
     - autofirma
     - bacon
+    - bitwarden
     - eza
     - firefox
     - fisher
