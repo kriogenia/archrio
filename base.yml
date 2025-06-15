@@ -16,6 +16,7 @@ packages:
   install:
     - archiso
     - autofirma
+    - bacon
     - eza
     - firefox
     - fisher
