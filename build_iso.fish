@@ -28,6 +28,8 @@ cat $etc/os-release
 
 set -q WORK_FOLDER || set -f WORK_FOLDER /tmp/work
 set -q OUT_FOLDER || set -f OUT_FOLDER (pwd)/out
+mkdir -p $WORK_FOLDER
+mkdir -p $OUT_FOLDER
 
 echo "Updating pacman repos"
 pacman -Syy
