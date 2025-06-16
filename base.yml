@@ -39,8 +39,10 @@ packages:
     - pyenv
     - rust-analyzer
     - rustup
+    - steam
     - tmux
     - ttf-fira-code
+    - ttf-liberation
     - unzip
     - vim
     - vlc
