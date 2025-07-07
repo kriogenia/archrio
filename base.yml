@@ -14,8 +14,12 @@ packages:
     - ripgrep
     - wget
     - xsel
+    - yadm
   install:
-    - archiso
+    - archiso # and its test dependencies
+    - edk2-conf
+    - qemu-desktop
+
     # - autofirma
     - bacon
     - bitwarden
@@ -36,7 +40,6 @@ packages:
     - nvim
     - qbittorrent
     - pre-commit
-    - pyenv
     - rust-analyzer
     - rustup
     - steam
