@@ -17,7 +17,7 @@ packages:
     - yadm
   install:
     - archiso # and its test dependencies
-    - edk2-conf
+    - edk2-ovmf
     - qemu-desktop
 
     # - autofirma
