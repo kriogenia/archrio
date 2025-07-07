@@ -36,20 +36,14 @@
     "{{ p }}"{{ "," if not loop.last }}
     {%- endfor %}
   ],
-  "parallel downloads": 0,
+  "parallel downloads": 5,
   "profile_config": {
-    "gfx_driver": "{{ gpu_driver }}",
-    "greeter": "sddm",
+    "gfx_driver": null,
+    "greeter": null,
     "profile": {
-      "custom_settings": {
-        "Hyprland": {
-            "seat_access": "polkit"
-        }
-      },
-      "details": [
-        "Hyprland"
-      ],
-      "main": "Desktop"
+      "custom_settings": {},
+      "details": [],
+      "main": "Minimal"
     }
   },
   "save_config": null,
