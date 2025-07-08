@@ -2,14 +2,12 @@ custom_commands:
   preinstall:
   #- "nmcli device wifi connect MyWifi --ask"
   archinstall:
-  - "git clone https://github.com/kriogenia/dotfiles.git /home/archrio/dotfiles"
-  - "chown -R archrio:archrio /home/archrio/dotfiles"
-  - "chmod +x /home/archrio/dotfiles/install.sh"
-  - "USER_HOME=/home/archrio ./install.sh"
+  - "sudo -u archrio yadm clone https://github.com/kriogenia/dotfiles.git -b qs --bootstrap"
+  - "sudo -u archrio yadm config --add local.class amd"
+  - "chown -R archrio:archrio /home/archrio/"
   postinstall:
-  - "cp /tmp/user_*.json /mnt/home/archrio" 
+  - "cp /tmp/user_*.json /mnt/home/archrio"
   # - "reboot"
-gpu_driver: AMD / ATI (open-source)
 hostname: archrio
 root:
   password: $6$f0q9l955bVlDuDOG$vieMv0Uz.Db4PFKXTNmfjP7Pz6pCQz50yLdqkwKKmdj0mjJaKA6kaIO.PzJV9Yj6c2blY9grp2mvBJTUpS2Pl0 # root

@@ -19,12 +19,8 @@ packages:
     - archiso # and its test dependencies
     - edk2-ovmf
     - qemu-desktop
-
-    # - autofirma
     - bacon
     - bitwarden
-    # - ca-certificates-dnie
-    # - ca-certificates-fnmt
     - eza
     - firefox
     - fisher
@@ -32,16 +28,17 @@ packages:
     - gamemode
     - jdk-openjdk
     - jdk21-openjdk
-    # - jinja2-cli
     - jq
     - just
     - kitty
     - lazygit
+    - man-db
     - nvim
     - qbittorrent
     - pre-commit
     - rust-analyzer
     - rustup
+    - sddm
     - steam
     - tmux
     - ttf-fira-code
@@ -50,5 +47,4 @@ packages:
     - vim
     - vlc
     - yq
-    # - zen-browser-bin
     - zip
